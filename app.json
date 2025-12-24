@@ -1,7 +1,7 @@
 {
   "name": "Save Restricted Content Bot master-v1 branch",
-  "description": "Save Restricted Content Bot by Team SPY",
-  "logo": "https://lh3.googleusercontent.com/-HPcn7AqepNg/AAAAAAAAAAI/AAAAAAAAAAA/ALKGfknb1BkQiq-8_KUVOYcNAJ4swKivDQ/photo.jpg",
+  "description": "Save Restricted Content Bot by Death World",
+  "logo": "https://telegra.ph/file/48b466ccbad09a715b38a.jpg",
   "keywords": ["python3", "telegram", "MusicBot", "telegram-bot", "pyrogram"],
   "repository": "https://github.com/devgaganin/save_restricted-content-telegram-bot-repo",
   "success_url": "https://devgagan.in",
@@ -55,12 +55,12 @@
     
     "WEBSITE_URL": {
       "description": "Enter shortener website domain eg upshrink.com",
-      "value": "upshrink.com",
+      "value": "",
       "required": false
     },
     "AD_API": {
       "description": "Batch size for premium users",
-      "value": "52b4a2cf4687d81e7d3f8f2b7bc2943f618e78cb",
+      "value": "",
       "required": false
     },
     
