@@ -208,7 +208,7 @@ class ProgressManager:
             f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
             f"│ **__ETA:__** {eta_min:.2f} min\n"
             f"╰──────────────────╯\n\n"
-            f"**__Powered by Team SPY__**"
+            f"**__Powered by ᴅєαᴛн ᴡσʀℓᴅ__**"
         )
 
 class CaptionFormatter:
@@ -265,7 +265,7 @@ class FileOperations:
         """Process filename with user preferences"""
         delete_words = set(self.db.get_user_data(user_id, "delete_words", []))
         replacements = self.db.get_user_data(user_id, "replacement_words", {})
-        rename_tag = self.db.get_user_data(user_id, "rename_tag", "Team SPY")
+        rename_tag = self.db.get_user_data(user_id, "rename_tag", "ᴅєαᴛн ᴡσʀℓᴅ")
         
         path = Path(file_path)
         name = path.stem
@@ -484,12 +484,12 @@ class SmartTelegramBot:
                     pass
 
     async def upload_with_telethon(self, file_path: str, user_id: int, target_chat_id: int, caption: str, topic_id: Optional[int] = None, edit_msg=None):
-        """Upload using Telethon (SpyLib) with enhanced features"""
+        """Upload using Telethon (DeathLib) with enhanced features"""
         try:
             if edit_msg:
                 await edit_msg.delete()
             
-            progress_message = await gf.send_message(user_id, "**__SpyLib ⚡ Uploading...__**")
+            progress_message = await gf.send_message(user_id, "**__DeathLib ⚡ Uploading...__**")
             html_caption = await self.caption_formatter.markdown_to_html(caption)
             
             # Upload file using fast_upload
@@ -541,7 +541,7 @@ class SmartTelegramBot:
             )
             
         except Exception as e:
-            await app.send_message(LOG_GROUP, f"**SpyLib Upload Failed:** {str(e)}")
+            await app.send_message(LOG_GROUP, f"**DeathLib Upload Failed:** {str(e)}")
             raise
 
     async def handle_large_file_upload(self, file_path: str, sender: int, edit_msg, caption: str):
@@ -595,7 +595,7 @@ class SmartTelegramBot:
             if free_check == 1:
                 # Free user - send with protection
                 reply_markup = InlineKeyboardMarkup([[
-                    InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/kingofpatal")
+                    InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/narakvasi")
                 ]])
                 await app.copy_message(target_chat_id, LOG_GROUP, result.id, protect_content=True, reply_markup=reply_markup)
             else:
@@ -713,7 +713,7 @@ class SmartTelegramBot:
                 msg_id = int(parts[-1]) + offset
             
             if chat_id in protected_channels:
-                await app.edit_message_text(sender, edit_id, "❌ This channel is protected by **Team SPY**.")
+                await app.edit_message_text(sender, edit_id, "❌ This channel is protected by **ᴅєαᴛн ᴡσʀℓᴅ**.")
                 return None, None
                 
             return chat_id, msg_id
@@ -917,9 +917,8 @@ class SmartTelegramBot:
             [Button.inline("Remove Words", b'delete'), Button.inline("Reset All", b'reset')],
             [Button.inline("Session Login", b'addsession'), Button.inline("Logout", b'logout')],
             [Button.inline("Set Thumbnail", b'setthumb'), Button.inline("Remove Thumbnail", b'remthumb')],
-            [Button.inline("PDF Watermark", b'pdfwt'), Button.inline("Video Watermark", b'watermark')],
             [Button.inline("Upload Method", b'uploadmethod')],
-            [Button.url("Report Issues", "https://t.me/team_spy_pro")]
+            [Button.url("Report Issues", "https://t.me/deathkingworld")]
         ]
         
         message = (
@@ -957,13 +956,13 @@ async def callback_query_handler(event):
         
         buttons = [
             [Button.inline(f"Pyrogram v2{pyro_check}", b'pyrogram')],
-            [Button.inline(f"SpyLib v1 ⚡{tele_check}", b'telethon')]
+            [Button.inline(f"DeathLib v1 ⚡{tele_check}", b'telethon')]
         ]
         await event.edit(
             "📤 **Choose Upload Method:**\n\n"
             "**Pyrogram v2:** Standard, reliable uploads\n"
-            "**SpyLib v1 ⚡:** Advanced features, beta version\n\n"
-            "**Note:** SpyLib is built on Telethon and offers enhanced capabilities.",
+            "**DeathLib v1 ⚡:** Advanced features, beta version\n\n"
+            "**Note:** DeathLib is built on Telethon and offers enhanced capabilities.",
             buttons=buttons
         )
 
@@ -973,7 +972,7 @@ async def callback_query_handler(event):
 
     elif data == b'telethon':
         telegram_bot.db.save_user_data(user_id, "upload_method", "Telethon")
-        await event.edit("✅ Upload method set to **SpyLib v1 ⚡**\n\nThanks for helping us test this advanced library!")
+        await event.edit("✅ Upload method set to **DeathLib v1 ⚡**\n\nThanks for helping us test this advanced library!")
 
     # Session management
     elif data == b'logout':
@@ -1028,12 +1027,6 @@ async def callback_query_handler(event):
         else:
             await event.respond("❌ No thumbnail found to remove.")
 
-    # Watermark features (placeholder)
-    elif data == b'pdfwt':
-        await event.respond("🚧 **PDF Watermark**\n\nThis feature is under development...")
-
-    elif data == b'watermark':
-        await event.respond("🚧 **Video Watermark**\n\nThis feature is under development...")
 
     # Reset all settings
     elif data == b'reset':
