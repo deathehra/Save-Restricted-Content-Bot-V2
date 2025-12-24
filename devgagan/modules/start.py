@@ -75,41 +75,37 @@ help_pages = [
         "> Get all user IDs (Owner only)\n\n"
         "5. **/lock**\n"
         "> Lock channel from extraction (Owner only)\n\n"
-        "6. **/dl link**\n"
-        "> Download videos (Not available in v3 if you are using)\n\n"
-        "7. **/adl link**\n"
-        "> Download audio (Not available in v3 if you are using)\n\n"
-        "8. **/login**\n"
+        "6. **/login**\n"
         "> Log into the bot for private channel access\n\n"
-        "9. **/batch**\n"
+        "7. **/batch**\n"
         "> Bulk extraction for posts (After login)\n\n"
     ),
     (
         "📝 **Bot Commands Overview (2/2)**:\n\n"
-        "10. **/logout**\n"
+        "8. **/logout**\n"
         "> Logout from the bot\n\n"
-        "11. **/stats**\n"
+        "9. **/stats**\n"
         "> Get bot stats\n\n"
-        "12. **/plan**\n"
+        "10. **/plan**\n"
         "> Check premium plans\n\n"
-        "13. **/speedtest**\n"
-        "> Test the server speed (not available in v3)\n\n"
-        "14. **/terms**\n"
+        "11. **/speedtest**\n"
+        "> Test the server speed\n\n"
+        "12. **/terms**\n"
         "> Terms and conditions\n\n"
-        "15. **/cancel**\n"
+        "13. **/cancel**\n"
         "> Cancel ongoing batch process\n\n"
-        "16. **/myplan**\n"
+        "14. **/myplan**\n"
         "> Get details about your plans\n\n"
-        "17. **/session**\n"
+        "15. **/session**\n"
         "> Generate Pyrogram V2 session\n\n"
-        "18. **/settings**\n"
+        "16. **/settings**\n"
         "> 1. SETCHATID : To directly upload in channel or group or user's dm use it with -100[chatID]\n"
         "> 2. SETRENAME : To add custom rename tag or username of your channels\n"
         "> 3. CAPTION : To add custom caption\n"
         "> 4. REPLACEWORDS : Can be used for words in deleted set via REMOVE WORDS\n"
         "> 5. RESET : To set the things back to default\n\n"
-        "> You can set CUSTOM THUMBNAIL, PDF WATERMARK, VIDEO WATERMARK, SESSION-based login, etc. from settings\n\n"
-        "**__Powered by Team SPY__**"
+        "> You can set CUSTOM THUMBNAIL, SESSION-based login, etc. from settings\n\n"
+        "**_Powered by ᴅєαᴛн ᴡσʀℓᴅ_**"
     )
 ]
  
@@ -183,7 +179,7 @@ async def terms(client, message):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/kingofpatal")],
+             [InlineKeyboardButton("💬 Contact Now", url="https://t.me/narakvasi")],
         ]
     )
     await message.reply_text(terms_text, reply_markup=buttons)
@@ -202,7 +198,7 @@ async def plan(client, message):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/kingofpatal")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/narakvasi")],
         ]
     )
     await message.reply_text(plan_text, reply_markup=buttons)
@@ -221,7 +217,7 @@ async def see_plan(client, callback_query):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/kingofpatal")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/narakvasi")],
         ]
     )
     await callback_query.message.edit_text(plan_text, reply_markup=buttons)
@@ -239,7 +235,7 @@ async def see_terms(client, callback_query):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/kingofpatal")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/narakvasi")],
         ]
     )
     await callback_query.message.edit_text(terms_text, reply_markup=buttons)
