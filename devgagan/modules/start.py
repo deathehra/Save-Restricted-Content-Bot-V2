@@ -105,7 +105,7 @@ help_pages = [
         "> 4. REPLACEWORDS : Can be used for words in deleted set via REMOVE WORDS\n"
         "> 5. RESET : To set the things back to default\n\n"
         "> You can set CUSTOM THUMBNAIL, SESSION-based login, etc. from settings\n\n"
-        "**_Powered by ᴅєαᴛн ᴡσʀℓᴅ_**"
+        "**__Powered by ᴅєαᴛн ᴡσʀℓᴅ__**"
     )
 ]
  
