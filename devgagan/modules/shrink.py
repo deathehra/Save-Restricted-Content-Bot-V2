@@ -1,4 +1,4 @@
- 
+h 
 # ---------------------------------------------------
 # File Name: shrink.py
 # Description: A Pyrogram bot for downloading files from Telegram channels or groups 
@@ -73,9 +73,9 @@ async def token_handler(client, message):
     msg = await app.get_messages(chat_id, 796)
     user_id = message.chat.id
     if len(message.command) <= 1:
-        image_url = "https://i.postimg.cc/v8q8kGyz/startimg-1.jpg"
-        join_button = InlineKeyboardButton("Join Channel", url="https://t.me/team_spy_pro")
-        premium = InlineKeyboardButton("Get Premium", url="https://t.me/kingofpatal")   
+        image_url = "https://i.postimg.cc/vB7xfh8Y/save.jpg"
+        join_button = InlineKeyboardButton("Join Channel", url="https://t.me/deathkingworld")
+        premium = InlineKeyboardButton("Get Premium", url="https://t.me/narakvasi")   
         keyboard = InlineKeyboardMarkup([
             [join_button],   
             [premium]    
@@ -84,9 +84,9 @@ async def token_handler(client, message):
         await message.reply_photo(
             msg.photo.file_id,
             caption=(
-                "Hi 👋 Welcome, Wanna intro...?\n\n"
-                "✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n"
-                "✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more."
+                f"<blockquote><b>👋 ʜᴇʏ!  {message.from_user.mention}!</b></blockquote>\n\n"
+                "🤖 ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇ ᴄᴏɴᴛᴇɴᴛ sᴀᴠᴇʀ ʙᴏᴛ, ᴅᴏ ʟᴏɢɪɴ ɪɴ ʙᴏᴛ ʙʏ /login ᴀɴᴅ sᴛᴀʀᴛ sᴀᴠɪɴɢ ғʀᴏᴍ ᴘᴜʙʟɪᴄ/ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟs/ɢʀᴏᴜᴘs ᴀɴᴅ ʙᴏᴛs ᴠɪᴀ sᴇɴᴅɪɴɢ ᴘᴏsᴛ ʟɪɴᴋ.\n"
+                "👉🏻 ᴇxᴇᴄᴜᴛᴇ /batch ғᴏʀ ʙᴜʟᴋ ᴘʀᴏᴄᴇss ᴜᴘᴛᴏ 1ᴋ ғɪʟᴇs ʀᴀɴɢᴇ."
             ),
             reply_markup=keyboard
         )
